@@ -56,10 +56,11 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($nim)
+    public function show($Nim)
     {
-        $Mahasiswa = Mahasiswa::where('nim', $Nim)->first();
+        $Mahasiswa = Mahasiswa::where('nim',$Nim)->first();
         return view('mahasiswa.detail', compact('Mahasiswa'));
+
     }
 
     /**
@@ -101,9 +102,9 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($nim)
+    public function destroy($Nim)
     {
-        Mahasiswa::where('nim', $Nim)->first()->delete();
+        Mahasiswa::where('nim',$Nim)->first()->delete();
         return redirect()->route('mahasiswa.index')-> with('success', 'Mahasiswa Berhasil Dihapus');
     }
 }
