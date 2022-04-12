@@ -22,5 +22,8 @@ protected $fillable = [
 'Nama',
 'Kelas',
 'Jurusan',
+'Email',
+'Alamat',
+'TL',
 ];
 }
