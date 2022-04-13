@@ -5,13 +5,13 @@
         <div class="pull-left mt-2">
             <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
         </div>
+        <BR><BR>
         <div class="float-right my-2">
             <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>
         </div>
-    </div>
- </div>
+        
 
- @if ($message = Session::get('success'))
+ @if ($message = Session::get('success')) 
     <div class="alert alert-success">
         <p>{{ $message }}</p>
     </div>
