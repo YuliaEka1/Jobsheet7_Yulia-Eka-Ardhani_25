@@ -14,7 +14,12 @@ class MahasiswaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+ 
+        return view('mahasiswa.index', [
+            'mahasiswa' => DB::table('mahasiswa')->paginate(3)
+        ]);
+        
         $mahasiswa = $mahasiswa = DB::table('mahasiswa')->get(); // Mengambil semua isi tabel
         $posts = Mahasiswa::orderBy('Nim', 'desc')->paginate(6);
         return view('mahasiswa.index', compact('mahasiswa'));
